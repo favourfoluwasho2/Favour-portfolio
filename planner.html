@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Academic Planner — Foluwasho Favour</title>
+<meta name="description" content="Interactive academic planner: add, complete, and delete tasks for the semester.">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<div class="registrar-strip">
+  <div class="wrap">
+    <span><b>Full name:</b> Foluwasho Favour</span>
+    <span><b>Email:</b> f.foluwasho3222@miva.edu.ng</span>
+    <span><b>Department:</b> Computer Science</span>
+    <span><b>Matric No:</b> 2025/B/CSC/0651</span>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="wrap nav-row">
+    <a class="brand" href="index.html">
+      <span class="brand-mark"><img src="assets/favour-avatar.jpg" alt="Portrait of Foluwasho Favour"></span>
+      <span>Favour Foluwasho<small>Student Portfolio</small></span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false"><span></span></button>
+    <nav class="primary-nav" id="primaryNav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="planner.html" class="active">Academic Planner</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap reveal">
+      <span class="breadcrumb"><b>Home</b> / Academic Planner</span>
+      <h1>Academic Planner</h1>
+      <p>Add assignments, mark them done, and clear them out when you're finished. Everything is saved to this browser, so your list is still here next time you visit.</p>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap">
+      <div class="planner-shell">
+
+        <!-- ===================== ADD TASK FORM ===================== -->
+        <form class="planner-form card" id="taskForm">
+          <span class="eyebrow">New task</span>
+          <div class="field">
+            <label for="taskTitle">Task name</label>
+            <input type="text" id="taskTitle" placeholder="e.g. Submit HTML assignment" required>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="taskCourse">Course / tag</label>
+              <select id="taskCourse">
+                <option value="General">General</option>
+                <option value="Cyber Threat Mgmt">Cyber Threat Mgmt</option>
+                <option value="HTML">HTML</option>
+                <option value="Data Analysis">Data Analysis</option>
+                <option value="Leadership">Leadership</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="taskDue">Due date</label>
+              <input type="date" id="taskDue">
+            </div>
+          </div>
+          <div class="field">
+            <label for="taskPriority">Priority</label>
+            <select id="taskPriority">
+              <option value="Low">Low</option>
+              <option value="Medium" selected>Medium</option>
+              <option value="High">High</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary" style="justify-content:center;">Add task</button>
+          <span class="muted" style="font-size:.78rem;">Tasks are stored locally in this browser only.</span>
+        </form>
+
+        <!-- ===================== TASK BOARD ===================== -->
+        <div class="planner-board">
+          <div class="planner-toolbar">
+            <div class="planner-stats" id="plannerStats"></div>
+            <div class="filter-pills" id="filterPills">
+              <button data-filter="all" class="active">All</button>
+              <button data-filter="active">Active</button>
+              <button data-filter="done">Completed</button>
+            </div>
+          </div>
+          <div id="task-list"></div>
+          <div class="empty-state" id="emptyState">No tasks yet — add your first one to the left.</div>
+          <button class="btn btn-ghost btn-sm" id="clearDone" style="justify-self:start;">Clear completed</button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="alt-bg tight">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">How it works</span>
+        <h2>Under the hood</h2>
+      </div>
+      <ol class="grid grid-3" style="list-style:none;">
+        <li class="card"><span class="tag">1</span><h3 style="font-size:1rem;margin-top:10px;">Add</h3><p class="muted" style="font-size:.88rem;">Fill in the form — the title is required, everything else is optional.</p></li>
+        <li class="card"><span class="tag gold">2</span><h3 style="font-size:1rem;margin-top:10px;">Track</h3><p class="muted" style="font-size:.88rem;">Tap the circle to mark a task complete; overdue dates are flagged in rust.</p></li>
+        <li class="card"><span class="tag rust">3</span><h3 style="font-size:1rem;margin-top:10px;">Tidy up</h3><p class="muted" style="font-size:.88rem;">Delete a single task, or clear every completed task at once.</p></li>
+      </ol>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div>
+      <h4>Navigate</h4>
+      <a href="index.html">Home</a>
+      <a href="about.html">About Me</a>
+      <a href="projects.html">Projects</a>
+      <a href="planner.html">Academic Planner</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div>
+      <h4>Reach me</h4>
+      <a href="mailto:f.foluwasho3222@miva.edu.ng">f.foluwasho3222@miva.edu.ng</a>
+      <a href="mailto:favourfoluwasho2@gmail.com">favourfoluwasho2@gmail.com</a>
+      <a href="https://www.linkedin.com/in/foluwasho-favour-786645230" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+    <div>
+      <h4>Student card</h4>
+      <div class="id-card compact footer-id">
+        <div class="id-card-body">
+          <span class="id-photo"><img src="assets/favour-avatar.jpg" alt=""></span>
+          <div>
+            <p class="id-name">Foluwasho Favour</p>
+            <p class="id-dept" style="color:var(--ink-soft)">2025/B/CSC/0651</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <span>© <span id="year"></span> Foluwasho Favour · Computer Science, Miva Open University</span>
+    <span>Built with HTML, CSS &amp; JavaScript</span>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/planner.js"></script>
+</body>
+</html>
